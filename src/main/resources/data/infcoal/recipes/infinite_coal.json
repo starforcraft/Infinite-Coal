@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CDC",
+    "D@D",
+    "CDC"
+  ],
+  "key": {
+    "C": { "item": "minecraft:coal" },
+    "D": { "item": "minecraft:diamond_block" },
+    "@": { "item": "minecraft:dragon_egg" }
+  },
+  "result": {
+    "item": "infcoal:infinite_coal",
+    "count": 1
+  }
+}

@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="https://www.gnu.org/licenses/gpl-3.0.en.html"
+issueTrackerURL="https://github.com/starforcraft/Infinite-Coal/issues/new/choose"
+[[mods]]
+modId="infcoal"
+version="${file.jarVersion}"
+displayName="Infinite Coal"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/infinite-coal"
+logoFile="examplemod.png"
+credits="Thanks for downloading this mod."
+authors="YTrollman"
+description="This mod adds one Item: Infinite Coal"
+
+[[dependencies.infcoal]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36.0.15,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.infcoal]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,)"
+    ordering="NONE"
+    side="BOTH"
