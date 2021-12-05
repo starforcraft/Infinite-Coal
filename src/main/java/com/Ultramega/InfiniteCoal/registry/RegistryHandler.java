@@ -1,4 +1,4 @@
-package com.YTrollman.InfiniteCoal.registry;
+package com.Ultramega.InfiniteCoal.registry;
 
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
