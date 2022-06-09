@@ -6,7 +6,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import org.jetbrains.annotations.Nullable;
 
 public class InfiniteCoalItem extends Item {
-
 	public InfiniteCoalItem(Properties properties) {
 		super(properties);
 	}

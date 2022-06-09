@@ -8,7 +8,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
-
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, InfiniteCoal.MOD_ID);
 
     public static final RegistryObject<Item> INFINITE_COAL = ITEMS.register("infinite_coal", () -> new InfiniteCoalItem(new Item.Properties().tab(ItemGroupInfiniteCoal.INFINITE_COAL)));

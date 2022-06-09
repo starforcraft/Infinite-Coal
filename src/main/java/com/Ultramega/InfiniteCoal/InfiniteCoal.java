@@ -12,11 +12,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod("infcoal")
-public class InfiniteCoal
-{
+public class InfiniteCoal {
     public static final String MOD_ID = "infcoal";
-    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
-    
+
     public InfiniteCoal() {
         RegistryHandler.init();
         
@@ -26,19 +24,16 @@ public class InfiniteCoal
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
+    private void setup(final FMLCommonSetupEvent event) {
     	
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) 
-    {
+    private void doClientStuff(final FMLClientSetupEvent event) {
     	
     }
 
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
+    public void onServerStarting(ServerStartingEvent event) {
     	
     }
 }

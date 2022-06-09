@@ -10,9 +10,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nonnull;
 
 public class ItemGroupInfiniteCoal{
-
 	public static final CreativeModeTab INFINITE_COAL = (new CreativeModeTab(InfiniteCoal.MOD_ID) {
-
 		@Override
 		@Nonnull
 		@OnlyIn(Dist.CLIENT)

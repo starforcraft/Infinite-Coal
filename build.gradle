@@ -1,34 +1,20 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-    }
-}
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-
-repositories {
-  	maven {
-    	name = "Progwml6 maven"
-    	url = "https://dvs1.progwml6.com/files/maven/"
-  	}
-  	maven {
-    	name = "ModMaven"
-    	url = "https://modmaven.k-4u.nl"
-  	}
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.+'
 }
 
 version = "${mod_version}"
 group = 'com.Ultramega.InfiniteCoal' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "${modid}"
 
+repositories {
+
+}
+
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: "official", version: "${mc_version}"
 
@@ -83,8 +69,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
-    compileOnly fg.deobf("mezz.jei:jei-1.18:${jei_version}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.18:${jei_version}")
+    //compileOnly fg.deobf("mezz.jei:jei-1.18:${jei_version}:api")
+    //runtimeOnly fg.deobf("mezz.jei:jei-1.18:${jei_version}")
 }
 
 jar {
@@ -92,7 +78,7 @@ jar {
         attributes([
                 "Specification-Title"     : "infcoal",
                 "Specification-Vendor"    : "infcoalsareus",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "infcoalsareus",
@@ -102,15 +88,7 @@ jar {
 }
 
 jar.finalizedBy('reobfJar')
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact jar
-        }
-    }
-    repositories {
-        maven {
-            url "file://${project.projectDir}/mcmodsrepo"
-        }
-    }
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }
